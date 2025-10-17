@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - Hizbil Amin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(to right, #2196F3, #21CBF3);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .payment-section {
+            padding: 25px;
+        }
+
+        .payment-method {
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+        }
+
+        .payment-header {
+            background-color: #f5f9ff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2196F3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .payment-title {
+            font-weight: 600;
+            color: #2196F3;
+        }
+
+        .payment-details {
+            padding: 15px;
+        }
+
+        .payment-info {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .payment-label {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .payment-value {
+            font-weight: 600;
+            color: #2196F3;
+        }
+
+        .copy-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.3s;
+            margin-top: 5px;
+        }
+
+        .copy-btn:hover {
+            background-color: #0b7dda;
+        }
+
+        .channel-section {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f9ff;
+            border-radius: 10px;
+        }
+
+        .channel-title {
+            color: #2196F3;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .channel-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #2196F3, #21CBF3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .channel-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .payment-section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Payment Gateway</h1>
+            <p>Pilih metode pembayaran yang tersedia</p>
+        </div>
+        
+        <div class="payment-section">
+            <div class="payment-method">
+                <div class="payment-header">
+                    <div class="payment-icon">D</div>
+                    <div class="payment-title">DANA</div>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <span class="payment-label">Nomor:</span>
+                        <span class="payment-value">081373789250</span>
+                    </div>
+                    <div class="payment-info">
+                        <span class="payment-label">Atas Nama:</span>
+                        <span class="payment-value">MUHAMMAD HIZBIL AMIN</span>
+                    </div>
+                    <button class="copy-btn" data-copy="081373789250">Salin Nomor</button>
+                </div>
+            </div>
+            
+            <div class="payment-method">
+                <div class="payment-header">
+                    <div class="payment-icon">G</div>
+                    <div class="payment-title">GOPAY</div>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <span class="payment-label">Nomor:</span>
+                        <span class="payment-value">081373789250</span>
+                    </div>
+                    <div class="payment-info">
+                        <span class="payment-label">Atas Nama:</span>
+                        <span class="payment-value">MUHAMMAD HIZBIL AMIN</span>
+                    </div>
+                    <button class="copy-btn" data-copy="081373789250">Salin Nomor</button>
+                </div>
+            </div>
+            
+            <div class="payment-method">
+                <div class="payment-header">
+                    <div class="payment-icon">O</div>
+                    <div class="payment-title">OVO</div>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <span class="payment-label">Nomor:</span>
+                        <span class="payment-value">081373789250</span>
+                    </div>
+                    <div class="payment-info">
+                        <span class="payment-label">Atas Nama:</span>
+                        <span class="payment-value">muhammad hizbil amin</span>
+                    </div>
+                    <button class="copy-btn" data-copy="081373789250">Salin Nomor</button>
+                </div>
+            </div>
+            
+            <div class="channel-section">
+                <div class="channel-title">Ikuti Saluran Kami</div>
+                <a href="https://whatsapp.com/channel/0029VartfI88fewwkJAZDf32" class="channel-btn" target="_blank">WhatsApp Channel</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2023 Muhammad Hizbil Amin. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menyalin teks ke clipboard
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const textToCopy = this.getAttribute('data-copy');
+                
+                // Membuat elemen textarea sementara
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+                document.body.appendChild(textarea);
+                
+                // Memilih dan menyalin teks
+                textarea.select();
+                document.execCommand('copy');
+                
+                // Menghapus elemen textarea
+                document.body.removeChild(textarea);
+                
+                // Mengubah teks tombol sementara
+                const originalText = this.textContent;
+                this.textContent = 'Tersalin!';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
